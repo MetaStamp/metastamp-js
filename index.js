@@ -3,12 +3,12 @@ const { initSchema, generateSchema } = require('./protocolSchemas');
 
 class MetaStamp {
   init(initData) {
-    this.spec = Joi.validate(initData, initSchema) ? initData : null;
+    this.spec = !Joi.validate(initData, initSchema).error ? initData : null;
   }
 
   generate(generateData) {
-    generateData = {...generateData, ...initData};
-    if (!Joi.validate(generateData, generateSchema)) return null;
+    generateData = {...generateData, ...this.spec};
+    if (Joi.validate(generateData, generateSchema).error) return null;
     return generateData;
   }
 }

@@ -16,4 +16,4 @@ module.exports.generateSchema = Joi.object().keys({
   hook: Joi.string().required(),
   data: Joi.object().required(),
   metadata: Joi.object(),
-});
+}).required();
