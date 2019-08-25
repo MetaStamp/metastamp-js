@@ -1,3 +1,7 @@
-# meta-stamp
+# MetaStamp JS SDK
 
-generate protocol json
+## Example
+
+Checkout an Example DApp which demonstrates MetaStamp capabilities
+
+https://metastamp-fe.herokuapp.com
